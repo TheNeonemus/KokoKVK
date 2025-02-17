@@ -1,11 +1,14 @@
 <?php
+// Gantikan dengan maklumat sambungan yang sesuai
 $servername = "localhost";
-$username = "root"; // Tukar jika anda gunakan username lain
-$password = ""; // Tukar jika ada password untuk MySQL
-$database = "user_auth";
+$username = "root"; // Nama pengguna MySQL
+$password = ""; // Kata laluan MySQL
+$dbname = "user_auth"; // Nama pangkalan data
 
-$conn = new mysqli($servername, $username, $password, $database);
+// Buat sambungan
+$conn = new mysqli($servername, $username, $password, $dbname);
 
+// Semak sambungan
 if ($conn->connect_error) {
     die("Sambungan gagal: " . $conn->connect_error);
 }

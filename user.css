@@ -1,0 +1,429 @@
+/* Reset margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Badan halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Sidebar untuk pengguna */
+.sidebar {
+    background-color: #28a745; /* Hijau */
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 300px; /* Lebar sidebar apabila hover */
+}
+
+/* Teks dan link dalam sidebar */
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #218838;
+    padding-left: 30px; /* Animasi padding */
+}
+
+/* Submenu dalam sidebar */
+.submenu {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+/* Kandungan utama */
+.main-content {
+    margin-left: 250px; /* Ruang untuk sidebar */
+    padding: 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+/* Kandungan utama bergerak apabila sidebar melebar */
+.sidebar:hover ~ .main-content {
+    margin-left: 300px;
+}
+
+/* Header */
+.header {
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Pilihan Tahun */
+.year-selection {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column; /* Untuk susunan vertikal */
+    align-items: flex-start;
+}
+
+.year-selection h2 {
+    font-size: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px; /* Jarak antara butang */
+    margin-top: 10px; /* Ruang antara tajuk dan butang */
+}
+
+.year-selection .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Animasi untuk warna latar dan skala */
+}
+
+/* Animasi hover */
+.year-selection .btn:hover {
+    background-color: #218838;  /* Tukar warna latar belakang */
+    transform: scale(1.1); /* Besarkan butang sedikit semasa hover */
+}
+
+.year-selection .selected {
+    background-color: #218838;
+}
+
+
+/* Butang Program */
+.program-selection {
+    margin-top: 30px;
+    text-align: center; /* Selaraskan tajuk di tengah */
+}
+
+.program-selection h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333; /* Warna tajuk yang lembut */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.program-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Grid responsif */
+    gap: 15px; /* Lebih ruang antara butang */
+    justify-items: center; /* Selaraskan butang di tengah */
+    padding: 10px;
+}
+
+.program-buttons button {
+    background-color: #28a745;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px; /* Lebih melengkung untuk kelihatan moden */
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Bayang-bayang lembut */
+    transition: all 0.3s ease;
+}
+
+.program-buttons button:hover {
+    background-color: #218838;
+    transform: scale(1.1); /* Zoom in sedikit */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Bayang-bayang lebih jelas */
+}
+
+.program-buttons button:active {
+    transform: scale(1); /* Kembali kepada saiz asal semasa klik */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Kurangkan bayang */
+}
+
+/* Tambah sedikit estetik pada seluruh bahagian */
+.program-selection {
+    background: linear-gradient(135deg, #f5f5f5, #e8f5e9); /* Latar belakang gradient lembut */
+    padding: 20px;
+    border-radius: 10px; /* Melengkungkan bahagian program */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Bayang-bayang ringan */
+}
+
+
+/* Responsif */
+@media (max-width: 576px) {
+    .sidebar {
+        width: 50px;
+    }
+    .sidebar:hover {
+        width: 150px;
+    }
+
+
+    .main-content {
+        margin-left: 60px;
+    }
+
+    .sidebar:hover ~ .main-content {
+        margin-left: 200px;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+
+    .year-selection .btn {
+        font-size: 14px;
+    }
+
+    .program-buttons button {
+        font-size: 14px;
+    }
+}
+
+/* Gaya untuk jadual pelajar */
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Bayang-bayang lembut */
+}
+
+.student-table th,
+.student-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Garis bawah pada setiap sel */
+}
+
+.student-table th {
+    background-color: #28a745;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.student-table td {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Warna latar belakang baris ganjil dan genap */
+.student-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.student-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Hover pada baris */
+.student-table tr:hover {
+    background-color: #e8f5e9;
+    cursor: pointer;
+}
+
+/* Gaya untuk No, Username dan Password */
+.student-table td:nth-child(5),
+.student-table td:nth-child(6) {
+    font-family: 'Courier New', Courier, monospace;
+    color: #007b3d;
+    font-weight: bold;
+}
+
+/* Gaya untuk No */
+.student-table td:nth-child(1) {
+    color: #333;
+}
+
+/* Animasi untuk Hover pada butang */
+.student-table tr:hover td {
+    transform: scale(1.05); /* Kesan pembesaran sedikit apabila hover */
+    transition: all 0.2s ease;
+}
+
+/* Button untuk aksi lain seperti tambah */
+.action-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover pada butang */
+.action-btn:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Responsif untuk skrin kecil */
+@media (max-width: 768px) {
+    .student-table th, .student-table td {
+        padding: 10px;
+    }
+
+    .student-table td {
+        font-size: 14px;
+    }
+
+    .student-table th {
+        font-size: 16px;
+    }
+
+    .action-btn {
+        font-size: 14px;
+    }
+}
+
+/* Gaya untuk Form Carian */
+.search-form {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-form form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    width: 75%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.search-form button:hover {
+    background-color: #45a049;
+}
+
+/* Gaya untuk butang Tambah Pelajar */
+.add-student {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.add-student .btn {
+    background-color: #4CAF50; /* Hijau */
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-student .btn:hover {
+    background-color: #45a049; /* Hijau gelap */
+}
+
+/* Styling untuk butang kemaskini dan padam */
+/* Styling untuk butang kemaskini dan padam dengan ikon */
+td .btn-update, td .btn-delete {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: transparent;
+    line-height: 35px;
+    font-size: 20px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+td .btn-update i, td .btn-delete i {
+    margin: 0;
+}
+
+td .btn-update {
+    background-color: #4CAF50; /* Hijau untuk kemaskini */
+}
+
+td .btn-update:hover {
+    background-color: #45a049;
+}
+
+td .btn-delete {
+    background-color: #f44336; /* Merah untuk padam */
+}
+
+td .btn-delete:hover {
+    background-color: #e53935;
+}

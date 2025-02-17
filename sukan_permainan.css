@@ -1,0 +1,226 @@
+/* Reset margin dan padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Badan halaman */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Sidebar untuk pengguna */
+.sidebar {
+    background-color: #800000; /* Marron */
+    color: white;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    padding-left: 20px;
+    box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.1);
+    transition: width 0.3s ease;
+}
+
+.sidebar:hover {
+    width: 300px; /* Lebar sidebar apabila hover */
+}
+
+/* Teks dan link dalam sidebar */
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #5c2a28; /* Warna lebih gelap untuk hover */
+    padding-left: 30px; /* Animasi padding */
+}
+
+/* Kandungan utama */
+.main-content {
+    margin-left: 250px; /* Ruang untuk sidebar */
+    padding: 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+}
+
+/* Kandungan utama bergerak apabila sidebar melebar */
+.sidebar:hover ~ .main-content {
+    margin-left: 300px;
+}
+
+/* Header */
+.header {
+    background-color: #800000; /* Marron */
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 28px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* Pilihan Sukan */
+.sukan-selection {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sukan-selection h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.sukan-buttons button {
+    background-color: #800000; /* Marron */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sukan-buttons button:hover {
+    background-color: #5c2a28; /* Warna lebih gelap untuk hover */
+    transform: scale(1.1);
+}
+
+/* Gaya untuk form carian */
+.search-form {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.search-form form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #800000; /* Marron */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #5c2a28; /* Warna lebih gelap untuk hover */
+}
+
+/* Senarai pelajar */
+.students-list {
+    margin-top: 30px;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th, .student-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.student-table th {
+    background-color: #800000; /* Marron */
+    color: white;
+    text-transform: uppercase;
+}
+
+.student-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.student-table tr:hover {
+    background-color: #f1e2e2; /* Warna lebih terang untuk hover */
+}
+
+/* Butang aksi */
+.btn-update, .btn-delete {
+    color: #800000; /* Marron */
+    font-size: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+.btn-update:hover {
+    color: #5c2a28; /* Warna lebih gelap untuk hover */
+}
+
+.btn-delete:hover {
+    color: red;
+}
+
+/* Butang tambah pelajar */
+.add-student {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.add-student .btn {
+    background-color: #800000; /* Marron */
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.add-student .btn:hover {
+    background-color: #5c2a28; /* Warna lebih gelap untuk hover */
+}
